@@ -1,5 +1,5 @@
 
-/*  d‚claration des fonctions de gestion de la souris
+/*  dÃ©claration des fonctions de gestion de la souris
 
 				 par VANBELLE Edouard    */
 
@@ -114,10 +114,10 @@ int mouse_release(char btn,int &x,int &y)
 unsigned char mouse_init(void) // cette fonction renvoie le nombre de boutons
 {                           // de la souris.
   char tmp,ok;              // si le retour est 0 alors le driver n'est pas
-  asm {                     // install‚
+  asm {                     // installÃ©
   mov ax,0
-  int 0x33                   // de plus cette fonction r‚initialise le
-  and ax,bx                 // driver souris (si celui-ci est pr‚sent)
+  int 0x33                   // de plus cette fonction rÃ©initialise le
+  and ax,bx                 // driver souris (si celui-ci est prÃ©sent)
   mov word ptr tmp,ax
   }
   return (tmp);

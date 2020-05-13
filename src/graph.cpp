@@ -1,5 +1,5 @@
 
-/*  dÇclaration des fonctions de gestion de l'Çcran
+/*  d√©claration des fonctions de gestion de l'√©cran
                                  par VANBELLE Edouard   */
 
 // #define __COLORS
@@ -165,13 +165,13 @@ void outtext (char* text,BYTE C=getcolor)
      }
  retour:
  asm {
-      lodsb                     // caratäre[DS:SI]->al puis SI++
+      lodsb                     // carat√®re[DS:SI]->al puis SI++
       or  al,al
       jz  fin:
       push si
       mov ah,09
       mov cx,1
-      int 0x10                  // affichage du caractäre
+      int 0x10                  // affichage du caract√®re
       mov ah,03
       int 0x10                  // lecture du curseur
       inc dl                    // curseur vers la droite

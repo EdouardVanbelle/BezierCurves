@@ -1,5 +1,5 @@
 
-/*                      D‚mo sur les courbes de Bezier
+/*                      DÃ©mo sur les courbes de Bezier
 
 
 	Corps principal                 VANBELLE Edouard (c) 1998       */
@@ -28,7 +28,7 @@
 #include <complex.h>
 #include <stdio.h>
 #include <time.h>
-#include <graph.cpp> // gestion de l'‚cran (fonctions BIOS: INT 10h)
+#include <graph.cpp> // gestion de l'Ã©cran (fonctions BIOS: INT 10h)
 #include <mouse.cpp> // gestion de la souris (INT 33h)
 
 void echo (char* text,BYTE C=GREEN)
@@ -133,7 +133,7 @@ int main (void)
 
  if (!mouse_init() )
   {
-   printf("le driver de la souris n' est pas install‚.\n");
+   printf("le driver de la souris n' est pas installÃ©.\n");
    return(1);
   }
 
@@ -149,7 +149,7 @@ int main (void)
    {
     if ((X<CARRE) && (Y<CARRE))
      {
-      outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+      outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
       sprintf (buffer,"%.3d,%.3d",X-1,(CARRE-Y)-1);
       outtextxy (70,29,buffer);
       if (contexte!=SAISIE)
@@ -163,7 +163,7 @@ int main (void)
       if (contexte!=MENU)
        {
         mouse_cache();
-        outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+        outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
         mouse_affiche();
         contexte=MENU;
         mouse_pointer(&normal_curs);

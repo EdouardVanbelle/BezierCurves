@@ -9,8 +9,8 @@
 #define PGUP      73
 #define PGDOWN    81
 
-#define TICK   "û"
-#define BLANC  "Û"
+#define TICK   "Â¹"
+#define BLANC  "â–ˆ"
 #define UP     "\030"
 #define DOWN   "\031"
 
@@ -63,12 +63,12 @@ void fond (void)
  menu_item[ 3]="  Nouveau";
  menu_item[ 4]="  Quitter";
  menu_item[ 5]="Saisie...";
- menu_item[ 6]="  Cr‚ation/Ajout";
+ menu_item[ 6]="  CrÃ©ation/Ajout";
  menu_item[ 7]="  Suppresion/Modif";
- menu_item[ 8]="  RafraŒchir";
+ menu_item[ 8]="  RafraÃ®chir";
  menu_item[ 9]="Application...";
  menu_item[10]="  Similitudes";
- menu_item[11]="  El‚vation degr‚";
+ menu_item[11]="  ElÃ©vation degrÃ©";
  menu_item[12]="  Enveloppe";
 
 
@@ -79,14 +79,14 @@ void fond (void)
  line (XMAX,  0,XMAX,YMAX,BLUE);
  line (CARRE,  1,CARRE,CARRE,GREEN);
  line (  1,CARRE,CARRE,CARRE,GREEN);
- outtextxy (DEP,2,"Courbes de B‚zier",RED);
+ outtextxy (DEP,2,"Courbes de BÃ©zier",RED);
  outtextxy (DEP,3,"(c)1998 VANBELLE E.",RED);
 
  setcolor (CYAN);
  for (int i=0;i<ITEMS;i++)
   outtextxy (DEP+2,ST+i,menu_item[i]);
 
- outtextxy (DEP,20,TICK); outtext (" Polygone contr“le");
+ outtextxy (DEP,20,TICK); outtext (" Polygone contrÃ´le");
  outtextxy (DEP,21,"Lissage: #### \030\031");
  update_t(0);
  echo ("Chargement... Ok");
@@ -244,7 +244,7 @@ void test_aff_poly()
       if (!set)
       {
        mouse_cache();
-       outtextxy  (DEP+2,20,"Polygone contr“le",YELLOW);
+       outtextxy  (DEP+2,20,"Polygone contrÃ´le",YELLOW);
        mouse_affiche();
        set=TRUE;
       }
@@ -252,14 +252,14 @@ void test_aff_poly()
     else if (set)
      {
       mouse_cache();
-      outtextxy  (DEP+2,20,"Polygone contr“le",CYAN);
+      outtextxy  (DEP+2,20,"Polygone contrÃ´le",CYAN);
       mouse_affiche();
       set=FALSE;
      }
    }
   while (m);
   mouse_cache();
-  outtextxy  (DEP+2,20,"Polygone contr“le",CYAN);
+  outtextxy  (DEP+2,20,"Polygone contrÃ´le",CYAN);
   if (set)
    {
     if (aff_poly)

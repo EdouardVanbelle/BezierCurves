@@ -15,7 +15,7 @@ if (nbr_pts>1)
   if ((f=fopen(buffer,"wt"))==NULL)
    {
     erase_bar_bas();
-    echo ("Erreur de cr‚ation de fichier...",RED);
+    echo ("Erreur de crÃ©ation de fichier...",RED);
     return(FALSE);
    }
   else
@@ -24,14 +24,14 @@ if (nbr_pts>1)
      if (EOF==fprintf (f,"%d,%d\n",(int)(p[0][i].x),(int)(p[0][i].y)))
       {
        erase_bar_bas();
-       echo ("Une erreure est survenue durant l'‚criture du fichier",RED);
+       echo ("Une erreure est survenue durant l'Ã©criture du fichier",RED);
        fclose (f);
        return (FALSE);
       }
 
     fclose (f);
     erase_bar_bas();
-    echo ("Ecriture sur disque achev‚e.");
+    echo ("Ecriture sur disque achevÃ©e.");
     return (intact=TRUE);
    }
  }
@@ -158,14 +158,14 @@ if (accept())
     switch (sscanf(txt,"%d,%d",&i,&j))
     {
      case 0:
-              sprintf (buffer,"Erreur … la ligne %d: %s\n",ligne,txt);
+              sprintf (buffer,"Erreur Ã  la ligne %d: %s\n",ligne,txt);
               echo (buffer,RED);
               outtextxy (wherex()-1,29,BLANC,BLACK);
               mouse_affiche();
               fclose (f);
               return;
      case EOF:
-              sprintf(buffer,"Erreur … la ligne %d: %s\n",ligne,txt);
+              sprintf(buffer,"Erreur Ã  la ligne %d: %s\n",ligne,txt);
               echo (buffer,RED);
               outtextxy (wherex()-1,29,BLANC,BLACK);
               mouse_affiche();
@@ -174,7 +174,7 @@ if (accept())
      default:
               if (nbr_pts==PMAX)
               {
-               sprintf (buffer,"Version ‚tudiante limit‚ … %d points.",PMAX);
+               sprintf (buffer,"Version Ã©tudiante limitÃ© Ã  %d points.",PMAX);
                echo (buffer,RED);
                mouse_pointer (&interdiction);
 
@@ -302,7 +302,7 @@ do
   for (char tmp=0;tmp<DEP;tmp++) outtext (BLANC,BLACK);
   if (nbr_pts==PMAX-1)
    {
-    sprintf (buffer,"Version ‚tudiante limit‚ … %d points.",PMAX);
+    sprintf (buffer,"Version Ã©tudiante limitÃ© Ã  %d points.",PMAX);
     echo (buffer,RED);
     mouse_affiche();
     mouse_pointer (&interdiction);
@@ -317,7 +317,7 @@ do
   else
    {
     aff_controle ();
-    sprintf (buffer,"Indiquez les coordonn‚es du points nø%d",p_sel+1);
+    sprintf (buffer,"Indiquez les coordonnÃ©es du points nÂ°%d",p_sel+1);
     echo (buffer);
     if (nbr_pts!=0)
     {
@@ -385,7 +385,7 @@ do
     if (contexte2==MENU) break;
     update_coor=TRUE;
     erase_bar_bas();
-    input ("Entrez les coordonn‚es au format ###,### :",buffer);
+    input ("Entrez les coordonnÃ©es au format ###,### :",buffer);
     if (sscanf(buffer,"%d,%d",&x,&y)!=2)
     {
      new_point=TRUE;
@@ -419,7 +419,7 @@ do
    {
     if ((x<CARRE) && (y<CARRE))
      {
-      outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+      outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
       sprintf (buffer,"%.3d,%.3d",x-1,(CARRE-y)-1);
       outtextxy (70,29,buffer);
       if (contexte2!=SAISIE)
@@ -433,7 +433,7 @@ do
       if (contexte2!=MENU)
        {
         mouse_cache();
-        outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+        outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
         mouse_affiche();
         contexte2=MENU;
         mouse_pointer(&normal_curs);
@@ -500,7 +500,7 @@ void simil (void)
 if (!nbr_pts)
  {
   erase_bar_bas();
-  echo ("Il n'y a pas de courbe charg‚e...",RED);
+  echo ("Il n'y a pas de courbe chargÃ©e...",RED);
   return;
  }
 
@@ -515,7 +515,7 @@ if (!nbr_pts)
    {
     if ((x<CARRE) && (y<CARRE))
      {
-      outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+      outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
       sprintf (buffer,"%.3d,%.3d",x-1,(CARRE-y)-1);
       outtextxy (70,29,buffer);
       if (contexte2!=SAISIE)
@@ -529,7 +529,7 @@ if (!nbr_pts)
       if (contexte2!=MENU)
        {
         mouse_cache();
-        outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+        outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
         mouse_affiche();
         contexte2=MENU;
         mouse_pointer(&normal_curs);
@@ -587,7 +587,7 @@ if (!nbr_pts)
      alpha=arg(complex(x-omega.x,omega.y-y));
      transforme (k,alpha,complex(omega.x-1,CARRE-omega.y-1));
      erase_bar_bas();
-     sprintf (buffer,"Similitude de centre ê(%.3d,%.3d), de rapport k=%f et d'angle à=%+f",
+     sprintf (buffer,"Similitude de centre Ã›(%.3d,%.3d), de rapport k=%f et d'angle Ã“=%+f",
               (int)(omega.x),(int)(omega.y),k,alpha);
      echo (buffer);
      bez_line (omega.x,omega.y,omega.x+ECH,omega.y,LIGHTGREEN);
@@ -612,7 +612,7 @@ if (!nbr_pts)
   aff_controle (BLACK);
   if (mbtn!=1)
    {
-    echo ("Opp‚ration annul‚e");
+    echo ("OppÃ©ration annulÃ©e");
     for (int cnt=0;cnt<nbr_pts;cnt++)
     {
      p[0][cnt].x=p[1][cnt].x;
@@ -641,7 +641,7 @@ if (nbr_pts)
 {
  mouse_cache();
  outtextxy (DEP,24,"Click  gauche  pour ",MAGENTA);
- outtextxy (DEP,25,"d‚placer  le point. ",MAGENTA);
+ outtextxy (DEP,25,"dÃ©placer  le point. ",MAGENTA);
  outtextxy (DEP,26,"Click droit pour le ",MAGENTA);
  outtextxy (DEP,27,"supprimer.          ",MAGENTA);
  mouse_affiche();
@@ -655,7 +655,7 @@ if (nbr_pts)
    {
     if ((X<CARRE) && (Y<CARRE))
      {
-      outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+      outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
       sprintf (buffer,"%.3d,%.3d",X-1,(CARRE-Y)-1);
       outtextxy (70,29,buffer);
       if (contexte2!=SAISIE)
@@ -669,7 +669,7 @@ if (nbr_pts)
       if (contexte2!=MENU)
        {
         mouse_cache();
-        outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+        outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
         mouse_affiche();
         contexte2=MENU;
         mouse_pointer(&normal_curs);
@@ -712,7 +712,7 @@ if (nbr_pts)
      old_pnt=find_pnt;
      mouse_move (a=(p[0][find_pnt].x+1),b=(CARRE-p[0][find_pnt].y-1));
      mouse_pointer (&deplacer);
-     sprintf (buffer,"Point s‚l‚tionn‚: %d",find_pnt+1);
+     sprintf (buffer,"Point sÃ©lÃ©tionnÃ©: %d",find_pnt+1);
      erase_bar_bas();
      echo (buffer);
     } else
@@ -742,7 +742,7 @@ if (nbr_pts)
         aff_courbe   ();
         xx=x;
         yy=y;
-        outtextxy (70,29,"ÛÛÛÛÛÛÛ",BLACK);
+        outtextxy (70,29,"â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ",BLACK);
         sprintf (buffer,"%.3d,%.3d",x-1,(CARRE-y)-1);
         outtextxy (70,29,buffer);
        }
@@ -776,7 +776,7 @@ void degre (void)
   if ((nbr_pts<PMAX) && (nbr_pts))
   {
    erase_bar_bas();
-   echo ("Calcul des nouveaux points pour une ‚l‚vation de un degr‚...");
+   echo ("Calcul des nouveaux points pour une Ã©lÃ©vation de un degrÃ©...");
    if (aff_poly) aff_controle(BLACK);
    aff_courbe (BLACK);
 
@@ -805,7 +805,7 @@ void degre (void)
    if (nbr_pts)
     {
      erase_bar_bas();
-     sprintf (buffer,"Version ‚tudiante limit‚ … %d points.",PMAX);
+     sprintf (buffer,"Version Ã©tudiante limitÃ© Ã  %d points.",PMAX);
      echo (buffer,RED);
      mouse_pointer (&interdiction);
      mouse_release (0,x,y);
@@ -815,7 +815,7 @@ void degre (void)
    else
     {
      erase_bar_bas();
-     echo ("Il n'y a pas de courbe charg‚e...",RED);
+     echo ("Il n'y a pas de courbe chargÃ©e...",RED);
     }
   }
   }
@@ -833,7 +833,7 @@ void envel (void)
  mouse_cache();
  echo ("Calcul de l'enveloppe :");
  int pos=wherex();
- for (int i=0; i<(360/8); i++) outtext ("±",GREEN);
+ for (int i=0; i<(360/8); i++) outtext ("â–’",GREEN);
  mouse_affiche();
  gotoxy (pos,29);
  for (i=0; i<(360/8); i++)
@@ -846,7 +846,7 @@ void envel (void)
       {
        erase_bar_bas();
        mouse_cache();
-       echo ("Opp‚ration annul‚e");
+       echo ("OppÃ©ration annulÃ©e");
        mouse_affiche();
        mouse_pointer (&normal_curs);
        return;
@@ -858,14 +858,14 @@ void envel (void)
   }
  erase_bar_bas();
  mouse_cache();
- echo("Enveloppe d‚termin‚e.");
+ echo("Enveloppe dÃ©terminÃ©e.");
  mouse_affiche();
  mouse_pointer (&normal_curs);
  } else
  {
  erase_bar_bas();
  mouse_cache();
- outtextxy (1,29,"Il n'y a pas de courbe charg‚e...",RED);
+ outtextxy (1,29,"Il n'y a pas de courbe chargÃ©e...",RED);
  mouse_affiche();
  }
 }
